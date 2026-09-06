@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: post.title,
     description: post.excerpt,
     path: `/blog/${slug}`,
-    keywords: post.seoKeywords.split(",").map((k) => k.trim()),
+    keywords: post.seoKeywords,
     type: "article",
   });
 }
