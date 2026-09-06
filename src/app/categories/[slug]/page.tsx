@@ -40,7 +40,7 @@ export default async function CategoryPage({
   if (!category) notFound();
 
   const page = Math.max(1, Number(pageParam) || 1);
-  const dbCategory = await getCategoryBySlug(slug);
+  const contentCategory = await getCategoryBySlug(slug);
   const { rows, total, totalPages } = await getApisPage(slug, page);
 
   return (
@@ -56,31 +56,14 @@ export default async function CategoryPage({
         <Icon name={category.icon} className="h-3 w-3" /> {total} APIs
       </Badge>
       <h1 className="text-4xl font-black sm:text-5xl">{category.name} APIs</h1>
-      <p className="mt-3 max-w-2xl text-[var(--muted)]">{dbCategory?.description ?? category.description}</p>
+      <p className="mt-3 max-w-2xl text-[var(--muted)]">{contentCategory?.description ?? category.description}</p>
 
       {rows.length === 0 ? (
         <p className="mt-10 text-[var(--muted)]">No APIs found in this category yet.</p>
       ) : (
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {rows.map((api) => (
-            <ApiCard
-              key={api.slug}
-              categorySlug={slug}
-              api={{
-                slug: api.slug,
-                name: api.name,
-                description: api.description,
-                longDescription: api.longDescription,
-                baseUrl: api.baseUrl,
-                docsUrl: api.docsUrl,
-                authType: api.authType as never,
-                https: api.https,
-                cors: api.cors as never,
-                isTestable: api.isTestable,
-                tags: api.tags.split(",").map((t) => t.trim()).filter(Boolean),
-                sourceListUrl: api.sourceListUrl,
-              }}
-            />
+            <ApiCard key={api.slug} categorySlug={slug} api={api} />
           ))}
         </div>
       )}

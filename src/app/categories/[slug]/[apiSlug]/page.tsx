@@ -32,7 +32,7 @@ export async function generateMetadata({
     title: `${api.name} API — Free Docs, Auth Type & Live Test`,
     description: `${api.description} Auth: ${api.authType}. HTTPS: ${api.https ? "Yes" : "No"}. CORS: ${api.cors}.`,
     path: `/categories/${slug}/${apiSlug}`,
-    keywords: [api.name, `${api.name} api`, `${api.name} documentation`, ...(category?.seoKeywords ?? []), ...api.tags.split(",")],
+    keywords: [api.name, `${api.name} api`, `${api.name} documentation`, ...(category?.seoKeywords ?? []), ...api.tags],
   });
 }
 
@@ -47,7 +47,7 @@ export default async function ApiDetailPage({
   if (!category || !api) notFound();
 
   const related = await getRelatedApis(slug, apiSlug);
-  const tags = api.tags.split(",").map((t) => t.trim()).filter(Boolean);
+  const tags = api.tags;
   const pageUrl = `${siteConfig.url}/categories/${slug}/${apiSlug}`;
 
   const jsonLd = {
@@ -158,24 +158,7 @@ export default async function ApiDetailPage({
           <h2 className="mb-5 text-2xl font-black">More {category.name} APIs</h2>
           <div className="grid gap-5 sm:grid-cols-2">
             {related.map((r) => (
-              <ApiCard
-                key={r.slug}
-                categorySlug={slug}
-                api={{
-                  slug: r.slug,
-                  name: r.name,
-                  description: r.description,
-                  longDescription: r.longDescription,
-                  baseUrl: r.baseUrl,
-                  docsUrl: r.docsUrl,
-                  authType: r.authType as never,
-                  https: r.https,
-                  cors: r.cors as never,
-                  isTestable: r.isTestable,
-                  tags: r.tags.split(",").map((t) => t.trim()).filter(Boolean),
-                  sourceListUrl: r.sourceListUrl,
-                }}
-              />
+              <ApiCard key={r.slug} categorySlug={slug} api={r} />
             ))}
           </div>
         </section>

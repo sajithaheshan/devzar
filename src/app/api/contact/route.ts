@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { db } from "@/db";
-import { contactMessages } from "@/db/schema";
+import { db } from "@db/index";
+import { contactMessages } from "@db/schema";
 
 const schema = z.object({
   name: z.string().min(2).max(160),
