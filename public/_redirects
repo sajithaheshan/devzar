@@ -1,0 +1,11 @@
+
+# Netlify redirects for devzar.netlify.app
+# Legacy / friendly aliases -> canonical routes
+/apis            /categories               301
+/api-directory   /categories               301
+/github          /github/creators          301
+/creators        /github/creators          301
+/companies       /github/companies         301
+/tos             /terms-of-service         301
+/privacy         /privacy-policy           301
+/cookies         /cookie-policy            301

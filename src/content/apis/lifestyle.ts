@@ -1,0 +1,112 @@
+import type { ApiEntry } from "./types";
+
+// Note: this category is intentionally curated to be 100% safe-for-work.
+// It focuses on relationships, astrology, humor and self-improvement APIs.
+// No explicit or adult content is listed or linked anywhere on DevZar.
+export const lifestyleApis: ApiEntry[] = [
+  {
+    slug: "aztro-astrology",
+    name: "Aztro Astrology API",
+    description: "Daily horoscope API for all 12 zodiac signs.",
+    longDescription:
+      "Aztro returns daily, weekly and monthly horoscope readings for all zodiac signs, including mood, compatibility and lucky numbers.",
+    baseUrl: "https://aztro.sameerkumar.website",
+    docsUrl: "https://github.com/sameerkumar18/aztro",
+    authType: "No",
+    https: true,
+    cors: "Yes",
+    isTestable: false,
+    tags: ["lifestyle", "astrology"],
+    sourceListUrl: "https://github.com/public-apis/public-apis",
+  },
+  {
+    slug: "advice-slip",
+    name: "Advice Slip API",
+    description: "Random life-advice generator API.",
+    longDescription:
+      "A fun, free API returning random slips of general life advice — a favorite for building playful widgets and bots.",
+    baseUrl: "https://api.adviceslip.com",
+    docsUrl: "https://api.adviceslip.com/",
+    authType: "No",
+    https: true,
+    cors: "Yes",
+    isTestable: true,
+    tags: ["lifestyle", "advice"],
+    sourceListUrl: "https://github.com/public-apis/public-apis",
+  },
+  {
+    slug: "dad-jokes-api",
+    name: "icanhazdadjoke",
+    description: "Huge library of family-friendly dad jokes via a clean API.",
+    longDescription:
+      "icanhazdadjoke offers a free, fully safe-for-work API serving up a large curated collection of dad jokes with search support.",
+    baseUrl: "https://icanhazdadjoke.com",
+    docsUrl: "https://icanhazdadjoke.com/api",
+    authType: "No",
+    https: true,
+    cors: "Yes",
+    isTestable: true,
+    tags: ["lifestyle", "jokes", "humor"],
+    sourceListUrl: "https://github.com/public-apis/public-apis",
+  },
+  {
+    slug: "quotable",
+    name: "Quotable API",
+    description: "Free, open-source API of famous quotes with author and tag filters.",
+    longDescription:
+      "Quotable is an open-source API serving thousands of famous quotes, filterable by author, tag and length — great for daily-motivation widgets.",
+    baseUrl: "https://api.quotable.io",
+    docsUrl: "https://github.com/lukePeavey/quotable",
+    authType: "No",
+    https: true,
+    cors: "Yes",
+    isTestable: true,
+    tags: ["lifestyle", "quotes", "open-source"],
+    sourceListUrl: "https://github.com/lukePeavey/quotable",
+  },
+  {
+    slug: "namefake",
+    name: "RandomUser.me",
+    description: "Generate free random user profile data for testing dating/social apps.",
+    longDescription:
+      "RandomUser.me provides free randomized, GDPR-safe fake user profile data (name, photo, address) commonly used to prototype dating and social apps.",
+    baseUrl: "https://randomuser.me/api",
+    docsUrl: "https://randomuser.me/documentation",
+    authType: "No",
+    https: true,
+    cors: "Yes",
+    isTestable: true,
+    tags: ["lifestyle", "testing", "dating-app-prototyping"],
+    sourceListUrl: "https://github.com/public-apis/public-apis",
+  },
+  {
+    slug: "kanye-rest",
+    name: "Kanye REST",
+    description: "Random Kanye West quote generator API.",
+    longDescription:
+      "A lighthearted free API that returns a random Kanye West quote as JSON — a popular fun demo project among developers.",
+    baseUrl: "https://api.kanye.rest",
+    docsUrl: "https://kanye.rest/",
+    authType: "No",
+    https: true,
+    cors: "Yes",
+    isTestable: true,
+    tags: ["lifestyle", "humor"],
+    sourceListUrl: "https://github.com/public-apis/public-apis",
+  },
+  {
+    slug: "boredapi",
+    name: "Bored API",
+    description: "Suggests fun activities to fight boredom, filterable by type.",
+    longDescription:
+      "The Bored API returns a random activity suggestion (social, recreational, DIY, charity) to help users beat boredom — filterable by participants and price.",
+    baseUrl: "https://bored-api.appbrewery.com",
+    docsUrl: "https://bored-api.appbrewery.com/",
+    authType: "No",
+    https: true,
+    cors: "Yes",
+    isTestable: true,
+    tags: ["lifestyle", "activities"],
+    sourceListUrl: "https://github.com/public-apis/public-apis",
+  },
+];

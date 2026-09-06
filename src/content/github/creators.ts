@@ -1,0 +1,75 @@
+export interface GithubCreatorRef {
+  login: string;
+  tags: string[];
+  note: string;
+}
+
+/**
+ * Curated list of real GitHub usernames belonging to well-known open-source
+ * creators and maintainers. All stats (followers, repos, avatar, bio) shown
+ * on the site are fetched LIVE from the public GitHub REST API — nothing
+ * here is a fake number, we only store *which humans* to look up.
+ */
+export const githubCreators: GithubCreatorRef[] = [
+  { login: "torvalds", tags: ["linux", "git", "kernel"], note: "Creator of Linux and Git." },
+  { login: "gaearon", tags: ["react", "javascript"], note: "Co-creator of Redux, ex-React core team." },
+  { login: "sindresorhus", tags: ["javascript", "open-source", "cli"], note: "Most-starred individual maintainer on GitHub." },
+  { login: "karpathy", tags: ["ai", "machine-learning"], note: "Deep learning researcher, ex-OpenAI/Tesla." },
+  { login: "addyosmani", tags: ["javascript", "performance", "chrome"], note: "Chrome engineering lead, web performance advocate." },
+  { login: "tj", tags: ["javascript", "node", "express"], note: "Creator of Express.js and Koa." },
+  { login: "yyx990803", tags: ["vue", "javascript"], note: "Creator of Vue.js and Vite." },
+  { login: "Rich-Harris", tags: ["svelte", "javascript"], note: "Creator of Svelte and Rollup." },
+  { login: "wesbos", tags: ["javascript", "education"], note: "Full-stack teacher, co-host of Syntax.fm." },
+  { login: "getify", tags: ["javascript"], note: "Author of the 'You Don't Know JS' book series." },
+  { login: "kentcdodds", tags: ["javascript", "testing", "react"], note: "Creator of Testing Library, EpicWeb.dev." },
+  { login: "antfu", tags: ["vue", "vite", "open-source"], note: "Prolific Vue/Vite ecosystem maintainer." },
+  { login: "dtolnay", tags: ["rust"], note: "Top Rust ecosystem library author (serde, syn)." },
+  { login: "bradtraversy", tags: ["education", "javascript"], note: "Founder of Traversy Media." },
+  { login: "mrdoob", tags: ["webgl", "javascript"], note: "Creator of three.js." },
+  { login: "substack", tags: ["node", "javascript"], note: "Prolific Node.js module author." },
+  { login: "defunkt", tags: ["github", "ruby"], note: "GitHub co-founder." },
+  { login: "mojombo", tags: ["github", "jekyll"], note: "GitHub co-founder, creator of Jekyll." },
+  { login: "schacon", tags: ["git", "github"], note: "Git core contributor, GitHub co-founder." },
+  { login: "gvanrossum", tags: ["python"], note: "Creator of the Python programming language." },
+  { login: "kennethreitz", tags: ["python"], note: "Creator of the Requests library." },
+  { login: "tiangolo", tags: ["python", "fastapi"], note: "Creator of FastAPI and Typer." },
+  { login: "dhh", tags: ["ruby", "rails"], note: "Creator of Ruby on Rails, Basecamp founder." },
+  { login: "jeresig", tags: ["javascript", "jquery"], note: "Creator of jQuery." },
+  { login: "douglascrockford", tags: ["javascript", "json"], note: "Creator of JSON, author of JSLint." },
+  { login: "evanw", tags: ["javascript", "bundlers"], note: "Creator of esbuild." },
+  { login: "isaacs", tags: ["npm", "node"], note: "Creator of npm." },
+  { login: "jashkenas", tags: ["javascript", "coffeescript"], note: "Creator of CoffeeScript, Backbone.js, Underscore.js." },
+  { login: "acdlite", tags: ["react"], note: "React core team member." },
+  { login: "sebmarkbage", tags: ["react", "flow"], note: "React & Flow core contributor at Meta." },
+  { login: "tannerlinsley", tags: ["react", "tanstack"], note: "Creator of TanStack (React Query, Table, Router)." },
+  { login: "ryanflorence", tags: ["react", "remix"], note: "Co-creator of React Router and Remix." },
+  { login: "mjackson", tags: ["react", "remix"], note: "Co-creator of React Router and Remix." },
+  { login: "developit", tags: ["preact", "javascript"], note: "Creator of Preact." },
+  { login: "feross", tags: ["node", "webtorrent"], note: "Creator of WebTorrent and StandardJS." },
+  { login: "sdras", tags: ["vue", "css", "animation"], note: "Web animation & Vue ecosystem educator." },
+  { login: "paulirish", tags: ["chrome", "devtools"], note: "Chrome DevTools engineering lead." },
+  { login: "jakearchibald", tags: ["web-platform", "chrome"], note: "Web platform engineer, PWA pioneer." },
+  { login: "theprimeagen", tags: ["vim", "education"], note: "Popular developer educator and streamer." },
+  { login: "leerob", tags: ["nextjs", "vercel"], note: "VP of Product at Vercel, Next.js advocate." },
+  { login: "timneutkens", tags: ["nextjs"], note: "Co-creator and lead maintainer of Next.js." },
+  { login: "shadcn", tags: ["ui", "react", "tailwind"], note: "Creator of shadcn/ui." },
+  { login: "jherr", tags: ["react", "education"], note: "React ecosystem educator." },
+  { login: "mitsuhiko", tags: ["python", "rust"], note: "Creator of Flask and Jinja2." },
+  { login: "benawad", tags: ["typescript", "education"], note: "Full-stack educator, creator of dev tools content." },
+  { login: "egoist", tags: ["javascript", "vue"], note: "Prolific open-source tooling author." },
+  { login: "jaredpalmer", tags: ["react", "formik"], note: "Creator of Formik and Turborepo." },
+  { login: "danvk", tags: ["typescript"], note: "TypeScript ecosystem contributor and author." },
+  { login: "ije", tags: ["deno", "esm"], note: "Creator of esm.sh." },
+  { login: "vitalik-buterin", tags: ["ethereum", "blockchain"], note: "Co-founder of Ethereum." },
+  { login: "hwchase17", tags: ["ai", "llm"], note: "Creator of LangChain." },
+  { login: "lllyasviel", tags: ["ai", "image-generation"], note: "Creator of ControlNet and Fooocus." },
+  { login: "simonw", tags: ["python", "sqlite", "ai"], note: "Creator of Datasette, prolific open-source builder." },
+  { login: "giswqs", tags: ["geospatial", "python"], note: "Leading open-source geospatial Python maintainer." },
+  { login: "hrydgard", tags: ["emulation"], note: "Creator of the PPSSPP PSP emulator." },
+  { login: "peppy", tags: ["gaming", "osu"], note: "Creator of the osu! rhythm game." },
+  { login: "ornicar", tags: ["chess", "open-source"], note: "Creator of Lichess." },
+  { login: "fabpot", tags: ["php", "symfony"], note: "Creator of Symfony and Composer co-author." },
+  { login: "taylorotwell", tags: ["php", "laravel"], note: "Creator of the Laravel framework." },
+  { login: "matz", tags: ["ruby"], note: "Creator of the Ruby programming language." },
+  { login: "brendaneich", tags: ["javascript"], note: "Creator of JavaScript, co-founder of Mozilla and Brave." },
+];

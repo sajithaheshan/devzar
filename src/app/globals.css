@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+:root {
+  --color-yellow: #ffde00;
+  --color-green: #16c760;
+  --color-pink: #ff3ea5;
+  --color-blue: #2b6bff;
+  --color-purple: #8b5cf6;
+  --color-ink: #0b0b0b;
+  --color-paper: #fbfbf6;
+
+  --shadow-offset: 5px;
+  --border-width: 3px;
+
+  --bg: var(--color-paper);
+  --fg: var(--color-ink);
+  --card-bg: #ffffff;
+  --border-color: var(--color-ink);
+  --shadow-color: rgba(11, 11, 11, 0.95);
+  --muted: #545454;
+}
+
+.dark {
+  --bg: #0a0a0a;
+  --fg: #f4f4f5;
+  --card-bg: #121216;
+  --border-color: #2a2a33;
+  --shadow-color: rgba(43, 107, 255, 0.35);
+  --muted: #a1a1aa;
+}
+
+* {
+  border-color: var(--border-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  text-align: left;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Subtle dot-grid background pattern (light mode) */
+.bg-dot-grid {
+  background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: -10px -10px;
+  opacity: 1;
+}
+
+.dark .bg-dot-grid {
+  background-image: radial-gradient(rgba(139, 92, 246, 0.35) 1px, transparent 1px);
+}
+
+/* Neubrutalist card: thick border + hard offset shadow, no blur */
+.brutal-box {
+  background-color: var(--card-bg);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 0;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--shadow-color);
+}
+
+.dark .brutal-box {
+  box-shadow: 0 0 22px 0 var(--shadow-color);
+}
+
+.brutal-box-sm {
+  border: 2px solid var(--border-color);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 0 var(--shadow-color);
+}
+
+.dark .brutal-box-sm {
+  box-shadow: 0 0 14px 0 var(--shadow-color);
+}
+
+.brutal-hover {
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.brutal-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) 0 0 var(--shadow-color);
+}
+
+.dark .brutal-hover:hover {
+  box-shadow: 0 0 32px 4px var(--shadow-color);
+  transform: translate(0, -2px);
+}
+
+/* Gradient badge pill */
+.badge-gradient {
+  background: linear-gradient(90deg, rgba(255, 222, 0, 0.25), rgba(255, 62, 165, 0.25), rgba(22, 199, 96, 0.25));
+  border: 2px solid var(--border-color);
+}
+
+.dark .badge-gradient {
+  background: linear-gradient(90deg, rgba(43, 107, 255, 0.25), rgba(139, 92, 246, 0.35));
+  border: 1px solid rgba(139, 92, 246, 0.6);
+}
+
+/* Primary gradient CTA button with glow on hover */
+.btn-glow {
+  background: linear-gradient(90deg, var(--color-blue), var(--color-purple));
+  color: white;
+  border: var(--border-width) solid var(--border-color);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--shadow-color);
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25), 0 0 30px 6px rgba(43, 107, 255, 0.65);
+  transform: translate(-2px, -2px);
+}
+
+.dark .btn-glow {
+  border: 1px solid rgba(139, 92, 246, 0.7);
+  box-shadow: 0 0 18px 2px rgba(43, 107, 255, 0.5);
+}
+
+.dark .btn-glow:hover {
+  box-shadow: 0 0 34px 8px rgba(139, 92, 246, 0.85);
+}
+
+/* Glassmorphism floating pill nav (mobile) */
+.glass-pill {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 2px solid var(--border-color);
+}
+
+.dark .glass-pill {
+  background: rgba(15, 15, 20, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.45);
+  box-shadow: 0 0 24px 2px rgba(43, 107, 255, 0.35);
+}
+
+::selection {
+  background-color: var(--color-yellow);
+  color: var(--color-ink);
+}
+
+.prose-devzar h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-devzar h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.prose-devzar p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: var(--fg);
+}
+.prose-devzar strong {
+  font-weight: 800;
+}
+.prose-devzar ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+}
+.prose-devzar li {
+  margin-bottom: 0.4rem;
+}
+.prose-devzar code {
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  padding: 0.1rem 0.35rem;
+  font-size: 0.85em;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}

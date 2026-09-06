@@ -1,0 +1,14 @@
+{
+  "name": "DevZar — The World's Biggest Open API Directory",
+  "short_name": "DevZar",
+  "description": "10,000+ real, free public APIs across Anime, Gaming, Movies, Technology, Sports and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfbf6",
+  "theme_color": "#ffde00",
+  "icons": [
+    { "src": "/icon.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/apple-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/images/logo-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
